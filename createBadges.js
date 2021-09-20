@@ -3,7 +3,7 @@ import fs from 'fs';
  
 const format = {
     label: 'Open PRs',
-    message: process.env.PR_COUNT,
+    message: `${process.env.PR_COUNT}`,
     labelColor: 'black',
     color: 'blue',
     style: 'flat'

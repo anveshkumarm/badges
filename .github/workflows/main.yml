@@ -35,3 +35,18 @@ jobs:
           curl -s https://api.github.com/repos/anveshkumarm/badges/pulls | jq '.[0].number'
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: move to dir # Move the generated files into output folder
+        run: |
+          mkdir -p output
+          yes| cp -rf test.svg ./output/
+      - name: Commit files # commit the output folder
+        run: |
+          git config --local user.email "test@github.com"
+          git config --local user.name "GitHub Action test"
+          git add ./output
+          git commit -m "Add changes"
+      - name: Push changes # push the output folder to your repo
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true

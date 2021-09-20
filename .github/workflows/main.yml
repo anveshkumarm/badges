@@ -32,7 +32,7 @@ jobs:
         run: |
           npm install
           node createBadges.js
-          curl -s https://api.github.com/repos/anveshkumarm/badges/pulls | jq '.[0].number'
+          export PR_COUNT=$(curl -s https://api.github.com/repos/anveshkumarm/badges/pulls | jq '.[0].number')
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: move to dir # Move the generated files into output folder

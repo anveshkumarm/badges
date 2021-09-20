@@ -25,16 +25,12 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: apt-get install nodejs npm -y
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: 
-          apt install nodejs -y
-          node -v
-          apt install npm -y
-          npm -v 
-          npm install 
-          curl -s https://api.github.com/repos/anveshkumarm/badges/pulls | jq '.[0].number'
+          npm install,
+          curl -s https://api.github.com/repos/anveshkumarm/badges/pulls | jq '.[0].number',
           echo Add other actions to build,
           echo test, and deploy your project.

@@ -1,0 +1,11 @@
+{
+  "name": "my-app",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {},
+  "type": "module",
+  "main": "createBadge.js",
+  "dependencies": {
+    "badge-maker": "^3.3.1"
+  }
+}
